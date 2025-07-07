@@ -58,6 +58,7 @@ jobs:
         name: test-results
         path: |
           app/test-output/
+          logs/
 
     - name: Publish Test Report
       if: always()
