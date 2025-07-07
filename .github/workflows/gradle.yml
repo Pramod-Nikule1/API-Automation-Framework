@@ -57,14 +57,14 @@ jobs:
       with:
         name: test-results
         path: |
-          test-output/
+          app/test-output/
 
     - name: Publish Test Report
       if: always()
       uses: dorny/test-reporter@v1
       with:
         name: TestNG Results
-        path: test-output/junitreports/TEST-*.xml
+        path: app/test-output/junitreports/TEST-*.xml
         reporter: java-junit
 
   dependency-submission:
