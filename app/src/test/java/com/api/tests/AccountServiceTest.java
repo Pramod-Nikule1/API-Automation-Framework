@@ -94,6 +94,6 @@ public class AccountServiceTest extends TestBase {
         Assert.assertEquals(response.getStatusCode(), 406);
         ResponseError responseError = response.as(ResponseError.class);
         Assert.assertEquals(responseError.getCode(), "1204");
-        Assert.assertEquals(responseError.getMessage(), "User exists");
+        Assert.assertEquals(responseError.getMessage(), "User exists!");
     }
 }

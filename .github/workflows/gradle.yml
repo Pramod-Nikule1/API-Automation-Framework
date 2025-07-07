@@ -51,6 +51,22 @@ jobs:
     # - name: Build with Gradle 8.9
     #   run: gradle build
 
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results
+        path: |
+          test-output/reports/
+
+    - name: Publish Test Report
+      if: always()
+      uses: dorny/test-reporter@v1
+      with:
+        name: TestNG Results
+        path: test-output//junitreports/TEST-*.xml
+        reporter: java-junit
+
   dependency-submission:
 
     runs-on: ubuntu-latest
